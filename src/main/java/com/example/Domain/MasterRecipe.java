@@ -1,24 +1,31 @@
 package com.example.Domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.NamedQueries;
-//import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
 
 @Entity
-
-//@NamedQueries(value= {
-//		@NamedQuery(
-//				name="Recipe.getIngredientsByRecipeName",
-//				query="select ingredients from MasterRecipe m where m.recipe=?1"
-//				)
-//})
-public class Recipe {
+@Table(name="Recipe")
+public class MasterRecipe {
 	@Id
-	private int regno;
+	@GeneratedValue
+	private Integer regno;
 	private String recipe;
 	private String ingredients;
-	public int getRegno() {
+	
+	public MasterRecipe(String recipe, String ingredients) {
+		this.recipe=recipe;
+		this.ingredients=ingredients;
+	}
+
+	public MasterRecipe() {
+		super();
+	}
+	
+	public Integer getRegno() {
 		return regno;
 	}
 	public void setRegno(Integer regno) {
@@ -36,5 +43,7 @@ public class Recipe {
 	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
 	}
+	
+	
 }
 	
