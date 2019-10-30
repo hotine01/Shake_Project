@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 function getAllRecipes() {
 	let request = new XMLHttpRequest();
-	request.open("GET", "http://localhost:8080/recipe");
+	request.open("GET", "http://" + location.host + ":80:80" + "/recipe");
 
 	request.onload = function () {
 		renderToScreen(JSON.parse(request.response));
@@ -79,7 +79,7 @@ function editRecipe(listItem, func, button, info) {
 
 function addRecipe(form) {
 	let request = new XMLHttpRequest();
-	request.open("POST", "http://localhost:8080/recipe");
+	request.open("POST", "http://" + location.host + ":80:80" + "/recipe");
 	request.setRequestHeader("Content-Type", "application/json");
 	request.onload = function () {
 		getAllRecipes();
@@ -98,7 +98,7 @@ function addRecipe(form) {
 function updateRecipe(body) {
 	console.log(body);
 	 let request = new XMLHttpRequest();
-	 request.open("PUT", "http://localhost:8080/recipe");
+	 request.open("PUT", "http://" + location.host + ":80:80" + "/recipe");
 	request.setRequestHeader("Content-Type", "application/json");
 	request.onload = function () {
 			getAllRecipes();
@@ -112,8 +112,7 @@ function updateRecipe(body) {
 
 function deleteRecipe(regno) {
 	const http = new XMLHttpRequest();
-	const url = 'http://localhost:8080/recipe/'+regno;
-	http.open("DELETE", url);
+	http.open("DELETE", "http://" + location.host + ":80:80" + "/recipe"););
 	http.onload = function (e) {
 		getAllRecipes();
 	}
