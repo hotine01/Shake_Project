@@ -48,8 +48,6 @@ function renderToScreen(data) {
 	}
 }
 
-
-
 /**
  * Edits the recipe of the given information
  * @param {HTMLLIElement} listItem 
