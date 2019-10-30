@@ -12,7 +12,6 @@ function getAllRecipes() {
 	}
 	request.send();
 }
-
 function renderToScreen(data) {
 	let list = document.getElementById("recipe-list");
 	list.innerHTML = "";
