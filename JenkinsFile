@@ -10,12 +10,12 @@ pipeline {
         stage('Build') {
             steps {
 		sh 'mvn package -DskipTests'
-		    sh 'docker build -t="hotine01/Shake_Project:latest" .'
+		    sh 'docker build -t="hotine01/shake_project:latest" .'
                 }
             }
         stage('Deploy') {
             steps {
-		sh 'docker push  hotine01/Shake_Project:latest'
+		sh 'docker push  hotine01/shake_project:latest'
             }
         }
     }
