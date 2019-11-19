@@ -1,5 +1,5 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/Shake_Project.jar /usr/app/
+COPY ./target/ShakeProject.jar /usr/app/
 
-ENTRYPOINT ["java","-jar","usr/app/Shake_Project.jar"]
+ENTRYPOINT ["java","-jar","usr/app/ShakeProject.jar"]
